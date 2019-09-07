@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2019 GRC File API</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+
+  <br>
+  <br>
+  <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+
+            </div>
+        <div class="col-9">
+            <div class="jumbotron">
+              <h1 class="display-4">2019 GRC File API</h1>
+                <p class="lead">This API contains the text of documents prepared in response to the 2019 General Rate Case (GRC).</p>
+                    <hr class="my-4">
+                <p>Click the button below to go to the GitHub Repo for this API.</p>
+              <a class="btn btn-primary btn-lg" href="https://github.com/grantaguinaldo/grc" role="button">View Repo</a>
+            </div>
+        </div>
+
+        <div class="col">
+        <!-- Empty -->
+        </div>
+  </div>
+
+<div class="container">
+      <div class="row">
+        <div class="col">
+
+        </div>
+        <div class="col-9">
+            <br>
+                <p>
+
+                    The data for this API was obtained from <code>https://www.socalgas.com/regulatory/A17-10-008.shtml</code>. The pdf files from this website were downloaded and parsed using the <code>PyPDF2</code> library.
+
+                    <br>
+                    <br>
+
+                    To use this API, you'll need to make a <code>GET</code> request using the format provided below.
+
+                    <br>
+                    <br>
+
+                    <code>https://grc-api.herokuapp.com/api?fileidx=<'file_index'></code>
+
+                    <br>
+                    <br>
+
+                    To get the list of `fileidx` that are available, you can view all of the file indices by clicking <a href="https://github.com/grantaguinaldo/grc/blob/master/misc/grc_2016_file_index.csv">here</a>.
+
+                    <br>
+                    <br>
+
+                    As an example, if you're trying to get file_index <code>2016000</code>, your complete end point will be:
+
+                    <br>
+                    <br>
+
+                    <code>https://grc-api.herokuapp.com/api?fileidx=2016000</code>
+
+                    <br>
+                    <br>
+                    This is a work in progress, and I will be adding to this API over time.
+
+                </p>
+            <br>
+
+        </div>
+        <div class="col">
+        <!-- Empty -->
+        </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+
+
+</body>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</html>

@@ -19,10 +19,13 @@ conn = engine.connect()
 Base.classes.keys()
 
 
+@app.route('/')
+def index():
+  return render_template('index.html')
+
 @app.route('/is_alive')
 def is_alive():
   return 'I am alive!'
-
 
 @app.route('/api', methods=['GET'])
 def api_function():
