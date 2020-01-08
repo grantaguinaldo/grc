@@ -15,10 +15,10 @@ conn_str =  endpoint + index + api_version + search_term
 
 print('Making GET request ...')
 
-text = r.get(conn_str, headers=headers).json()['value'][0]['content']
+data_json = r.get(conn_str, headers=headers).json()
 
 #https://stackoverflow.com/questions/25735644/python-regex-for-splitting-text-into-sentences-sentence-tokenizing/25735848
-sentences = re.split(r'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s', text)
+sentences = re.split(r'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s', data_json['value'][0]['content'])
 sentence_list = [" ".join(each.replace('\r', '').replace('\n', '').strip().split()) for each in sentences]
 
 df1 =  pd.DataFrame({'content': sentence_list})
@@ -35,6 +35,6 @@ df.to_csv('grc_text_001.csv', index=False)
 print('Saving JSON ...')
 
 with open('grc_doc_001.json', 'w') as file:
-    json.dump(text, file)
+    json.dump(data_json, file)
 
- print('Done...')
+print('Done...')
