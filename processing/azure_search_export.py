@@ -4,6 +4,7 @@ import json
 import pandas as pd
 from key import *
 
+# API Key is provided in a separate file. 
 endpoint = 'https://grcdocs-search.search.windows.net'
 headers = {'Content-Type': 'application/json',
            'api-key': key}
@@ -17,7 +18,7 @@ print('Making GET request ...')
 
 data_json = r.get(conn_str, headers=headers).json()
 
-#https://stackoverflow.com/questions/25735644/python-regex-for-splitting-text-into-sentences-sentence-tokenizing/25735848
+# https://stackoverflow.com/questions/25735644/python-regex-for-splitting-text-into-sentences-sentence-tokenizing/25735848
 sentences = re.split(r'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s', data_json['value'][0]['content'])
 sentence_list = [" ".join(each.replace('\r', '').replace('\n', '').strip().split()) for each in sentences]
 
